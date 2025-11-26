@@ -87,40 +87,6 @@
       <version>${slf4j.version}</version>
     </dependency>
 
-    <!--      <dependency>-->
-    <!--        <groupId>org.liquibase</groupId>-->
-    <!--        <artifactId>liquibase-core</artifactId>-->
-    <!--        <version>${liquibase.version}</version>-->
-    <!--      </dependency>-->
-
-    <!--      <dependency>-->
-    <!--        <groupId>org.jooq</groupId>-->
-    <!--        <artifactId>jooq</artifactId>-->
-    <!--        <version>${jooq.version}</version>-->
-    <!--      </dependency>-->
-    <!--      <dependency>-->
-    <!--        <groupId>org.jooq</groupId>-->
-    <!--        <artifactId>jooq-meta</artifactId>-->
-    <!--        <version>${jooq.version}</version>-->
-    <!--      </dependency>-->
-    <!--      <dependency>-->
-    <!--        <groupId>org.jooq</groupId>-->
-    <!--        <artifactId>jooq-codegen</artifactId>-->
-    <!--        <version>${jooq.version}</version>-->
-    <!--      </dependency>-->
-
-    <!--      <dependency>-->
-    <!--        <groupId>org.postgresql</groupId>-->
-    <!--        <artifactId>postgresql</artifactId>-->
-    <!--        <version>${postgresql.driver.version}</version>-->
-    <!--      </dependency>-->
-
-    <!--      <dependency>-->
-    <!--        <groupId>org.slf4j</groupId>-->
-    <!--        <artifactId>slf4j-api</artifactId>-->
-    <!--        <version>${slf4j.version}</version>-->
-    <!--      </dependency>-->
-
     <!-- test resources -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>

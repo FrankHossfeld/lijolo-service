@@ -40,6 +40,17 @@ public class PersonService
     throw new DataNotFoundException("Person with personNr >>" + key + "<< not found");
   }
 
+  private List<Anschrift> getAnschriftenFor(Connection con,
+                                            Integer key) {
+    List<Condition> conditionList = new ArrayList<>();
+    conditionList.add(AnschriftJooq.ANSCHRIFT.PERSON_NR.eq(key));
+    return super.getDslContext(con)
+                .selectFrom(AnschriftJooq.ANSCHRIFT)
+                .where(conditionList)
+                .fetch()
+                .into(Anschrift.class);
+  }
+
   public Person insert(Connection con,
                        Person model)
       throws SQLException {
@@ -49,12 +60,6 @@ public class PersonService
     newRecord.insert();
     newRecord.refresh();
     Person newModel = newRecord.into(Person.class);
-    model.getAnschriften()
-         .forEach(a -> newModel.getAnschriften()
-                               .add(this.insertAnschrift(con,
-                                                         newModel.getPersonNr(),
-                                                         a)));
-
     con.commit();
     con.close();
     return newModel;
@@ -70,17 +75,6 @@ public class PersonService
     newRecord.insert();
     newRecord.refresh();
     return newRecord.into(Anschrift.class);
-  }
-
-  private List<Anschrift> getAnschriftenFor(Connection con,
-                                            Integer key) {
-    List<Condition> conditionList = new ArrayList<>();
-    conditionList.add(AnschriftJooq.ANSCHRIFT.PERSON_NR.eq(key));
-    return super.getDslContext(con)
-                .selectFrom(AnschriftJooq.ANSCHRIFT)
-                .where(conditionList)
-                .fetch()
-                .into(Anschrift.class);
   }
 
 }
