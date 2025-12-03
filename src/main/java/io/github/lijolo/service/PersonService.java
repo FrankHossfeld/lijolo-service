@@ -60,6 +60,12 @@ public class PersonService
     newRecord.insert();
     newRecord.refresh();
     Person newModel = newRecord.into(Person.class);
+    model.getAnschriften()
+         .forEach(a -> newModel.getAnschriften()
+                               .add(this.insertAnschrift(con,
+                                                         newModel.getPersonNr(),
+                                                         a)));
+
     con.commit();
     con.close();
     return newModel;

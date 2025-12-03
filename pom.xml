@@ -87,6 +87,13 @@
       <version>${slf4j.version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>s3</artifactId>
+      <version>2.39.4</version>
+    </dependency>
+
+
     <!-- test resources -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
